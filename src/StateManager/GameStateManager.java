@@ -45,5 +45,11 @@ public class GameStateManager {
 		gameStates.get(currentState).draw(g);			}
 	public void mousePressed(MouseEvent m){
 		gameStates.get(currentState).mousePressed(m);	}
+	public void mouseDragged(MouseEvent m) {
+		gameStates.get(currentState).mouseDragged(m);	}
+	public void mouseMoved(MouseEvent m) {
+		gameStates.get(currentState).mouseMoved(m);		}
+	public void mouseReleased(MouseEvent m) {
+		gameStates.get(currentState).mouseReleased(m);	}
 
 }

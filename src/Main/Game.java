@@ -8,8 +8,8 @@ import javax.swing.JFrame;
 public class Game {
  
 	public static void main(String[] args) {
-        	//create game window
-        	//then create the gamepanel inside the window to later call and determine which gamestate we are in
+        //create game window
+        //then create the gamepanel inside the window to later call and determine which gamestate we are in
 		JFrame window = new JFrame();
         window.setTitle("State Based Game");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

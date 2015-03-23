@@ -3,15 +3,18 @@
 
 package Main;
 
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.image.BufferedImage;
+
 import javax.swing.JPanel;
 
 import StateManager.GameStateManager;
 
-import java.awt.*;
-import java.awt.image.*;
-import java.awt.event.*;
-
-public class GamePanel extends JPanel implements Runnable, MouseListener {
+public class GamePanel extends JPanel implements Runnable, MouseListener, MouseMotionListener {
      
 	private static final long serialVersionUID = 1L;
 	public static final int WIDTH = 800;
@@ -35,6 +38,7 @@ public class GamePanel extends JPanel implements Runnable, MouseListener {
               super.addNotify();
               if(thread == null) {
                       addMouseListener(this);
+                      addMouseMotionListener(this);
                       //start thread
                       thread = new Thread(this);
                       thread.start();
@@ -71,7 +75,7 @@ public class GamePanel extends JPanel implements Runnable, MouseListener {
       		drawToScreen();
 
       		try {
-      			Thread.sleep(250);
+      			Thread.sleep(200);
 	        }catch(Exception e) {	e.printStackTrace();	}
       		}
       	}
@@ -95,21 +99,25 @@ public class GamePanel extends JPanel implements Runnable, MouseListener {
      
 
 
-	public void mouseClicked(MouseEvent m) {		
+	public void mouseClicked(MouseEvent m) {	
 	}
-
 	public void mouseEntered(MouseEvent m) {
 	}
-
 	public void mouseExited(MouseEvent m) {		
 	}
-
 	public void mousePressed(MouseEvent m) {	
 		gsm.mousePressed(m);
-	}
 
-	public void mouseReleased(MouseEvent m) {
-		
 	}
+	public void mouseReleased(MouseEvent m) {
+		gsm.mouseReleased(m);
+	}
+	public void mouseDragged(MouseEvent m) {
+		gsm.mouseDragged(m);
+	}
+	public void mouseMoved(MouseEvent m) {
+		gsm.mouseMoved(m);
+	}
+	
   
 }

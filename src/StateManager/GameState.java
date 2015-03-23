@@ -11,7 +11,7 @@ public abstract class GameState {
 	//instance of gsm for the classes that extend this
 	protected GameStateManager gsm;
 	//dimensions for grid
-	protected static final int gridSize = 40;
+	public static final int gridSize = 40;
 	protected static boolean grid[][] = new boolean[gridSize][gridSize];
 	protected static int box = 800 / gridSize;		 //box size
 	
@@ -19,5 +19,9 @@ public abstract class GameState {
 	public abstract void update();
 	public abstract void draw(Graphics g);
 	public abstract void mousePressed(MouseEvent m);
+	public abstract void mouseMoved(MouseEvent m);
+	public abstract void mouseDragged(MouseEvent m);
+	public abstract void mouseReleased(MouseEvent m);
+	
 	
 }

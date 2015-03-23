@@ -17,7 +17,7 @@ import StateManager.GameStateManager;
 public class PlayState extends GameState {
 
 	//boolean, to only automatically update moves if simulate is selected
-	private boolean animate = false;
+	private boolean animate = true;
 	//hold the images
 	private Image stepIM;
 	private Image simulateIM;
@@ -163,5 +163,23 @@ public class PlayState extends GameState {
 		return new Rectangle(140,10,50,30);		}
 	protected Rectangle getBoundsMenu(){
 		return new Rectangle(200,10,50,30);		}
+
+	@Override
+	public void mouseMoved(MouseEvent m) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent m) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent m) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }
